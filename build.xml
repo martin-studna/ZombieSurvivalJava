@@ -228,7 +228,7 @@
   </path>
   
   
-  <target name="compile.module.zombiesurvival" depends="compile.module.zombiesurvival.production,compile.module.zombiesurvival.tests" description="Compile module ZombieSurvival"/>
+  <target name="compile.module.zombiesurvival" depends="compile.module.zombiesurvival.production" description="Compile module ZombieSurvival"/>
   
   <target name="compile.module.zombiesurvival.production" depends="register.custom.compilers" description="Compile module ZombieSurvival; production classes">
     <mkdir dir="${zombiesurvival.output.dir}"/>
@@ -242,24 +242,6 @@
     
     <copy todir="${zombiesurvival.output.dir}">
       <fileset dir="${module.zombiesurvival.basedir}/src">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.zombiesurvival.tests" depends="register.custom.compilers,compile.module.zombiesurvival.production" description="compile module ZombieSurvival; test classes" unless="skip.tests">
-    <mkdir dir="${zombiesurvival.testoutput.dir}"/>
-    <javac2 srcdir="${module.zombiesurvival.basedir}/src" destdir="${zombiesurvival.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.zombiesurvival}/javac">
-      <compilerarg line="${compiler.args.zombiesurvival}"/>
-      <bootclasspath refid="zombiesurvival.module.bootclasspath"/>
-      <classpath refid="zombiesurvival.module.classpath"/>
-      <src refid="zombiesurvival.module.test.sourcepath"/>
-      <patternset refid="excluded.from.compilation.zombiesurvival"/>
-    </javac2>
-    
-    <copy todir="${zombiesurvival.testoutput.dir}">
-      <fileset dir="${module.zombiesurvival.basedir}/src/test/java">
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
