@@ -248,7 +248,7 @@
     </copy>
   </target>
   
-  <target name="compile.module.zombiesurvival.tests" depends="register.custom.compilers,compile.module.zombiesurvival.production" description="compile module ZombieSurvival; test classes" unless="skip.tests">
+  <!--<target name="compile.module.zombiesurvival.tests" depends="register.custom.compilers,compile.module.zombiesurvival.production" description="compile module ZombieSurvival; test classes" unless="skip.tests">
     <mkdir dir="${zombiesurvival.testoutput.dir}"/>
     <javac2 destdir="${zombiesurvival.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.zombiesurvival}/javac">
       <compilerarg line="${compiler.args.zombiesurvival}"/>
@@ -264,7 +264,7 @@
         <type type="file"/>
       </fileset>
     </copy>
-  </target>
+  </target>-->
   
   <target name="clean.module.zombiesurvival" description="cleanup module">
     <delete dir="${zombiesurvival.output.dir}"/>
