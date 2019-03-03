@@ -8,9 +8,6 @@
   <property name="main-class"  value="main.com.studna.zombiesurvival.Main"/>
   <property name="lib.dir"     value="libs"/>
 
-
-
-
   <target name="clean">
     <delete dir="${build.dir}"/>
   </target>
