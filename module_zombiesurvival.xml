@@ -18,31 +18,27 @@
   <path id="zombiesurvival.module.production.classpath">
     <path refid="${module.jdk.classpath.zombiesurvival}"/>
     <path refid="library.commons-lang3-3.8.1-javadoc.classpath"/>
-    <path refid="library.jsfml-test.classpath"/>
-    <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+    <path refid="library.jsfml.classpath"/>
   </path>
   
   <path id="zombiesurvival.runtime.production.module.classpath">
     <pathelement location="${zombiesurvival.output.dir}"/>
     <path refid="library.commons-lang3-3.8.1-javadoc.classpath"/>
-    <path refid="library.jsfml-test.classpath"/>
-    <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+    <path refid="library.jsfml.classpath"/>
   </path>
   
   <path id="zombiesurvival.module.classpath">
     <path refid="${module.jdk.classpath.zombiesurvival}"/>
     <pathelement location="${zombiesurvival.output.dir}"/>
     <path refid="library.commons-lang3-3.8.1-javadoc.classpath"/>
-    <path refid="library.jsfml-test.classpath"/>
-    <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+    <path refid="library.jsfml.classpath"/>
   </path>
   
   <path id="zombiesurvival.runtime.module.classpath">
     <pathelement location="${zombiesurvival.testoutput.dir}"/>
     <pathelement location="${zombiesurvival.output.dir}"/>
     <path refid="library.commons-lang3-3.8.1-javadoc.classpath"/>
-    <path refid="library.jsfml-test.classpath"/>
-    <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+    <path refid="library.jsfml.classpath"/>
   </path>
   
   
