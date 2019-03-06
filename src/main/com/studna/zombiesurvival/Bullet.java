@@ -5,6 +5,10 @@ import org.jsfml.graphics.Color;
 import org.jsfml.graphics.RenderWindow;
 import org.jsfml.system.Vector2f;
 
+/**
+ * Object bullet represents one of the three types of missile, with which
+ * a player shoots enemies
+ */
 public class Bullet
 {
     public CircleShape shape;

@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Random;
 
+/**
+ Class Enemy sets initial position,
+ chooses properties and type of enemy and his movement direction
+ is set to a position of the player
+ * */
 public class Enemy extends Entity
 {
 

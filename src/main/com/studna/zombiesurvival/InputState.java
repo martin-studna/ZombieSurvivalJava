@@ -3,7 +3,7 @@ package main.com.studna.zombiesurvival;
 import org.jsfml.system.Vector2f;
 import org.jsfml.window.Keyboard;
 
-/* This class stores all the keyboard and mouse events */
+/** This class stores all the keyboard and mouse events */
 public class InputState
 {
     public Vector2f mousePosition;

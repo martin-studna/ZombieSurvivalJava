@@ -8,7 +8,16 @@ import org.jsfml.system.Vector2f;
 
 import java.util.Random;
 
-
+/**
+ * <h1>Bomb</h1>
+ * Class Bomb implements one of the guns, which has a player available.
+ * Bombs change their color during their execution time, which is limited.
+ * Bomb will disappear in three scenarios.
+ *      1. if the lifetime is over.
+ *      2. if the bomb gets out of the window
+ *      3. if the bomb hits enemy
+ *  If the bomb hits enemy, it is going resize and then it will dissappear.
+ **/
 public class Bomb
 {
     public StopWatch watch;

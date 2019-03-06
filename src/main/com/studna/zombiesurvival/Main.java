@@ -5,7 +5,7 @@ import org.jsfml.window.ContextActivationException;
 import java.io.IOException;
 
 
-/*
+/**
  * <h1> Zombie Survival </h1>
  *
  * Zombie Survival is simple shooter game written in Java.
@@ -23,7 +23,7 @@ import java.io.IOException;
  * @author: Martin Studna
  * @version: 1.0
  * @since 2018-02-17
- * */
+ */
 
 public class Main
 {

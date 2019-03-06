@@ -9,6 +9,7 @@ import org.jsfml.window.Keyboard;
 import java.io.IOException;
 import java.nio.file.Paths;
 
+/** In class Player we handle all important events like shooting, moving, giving score and decreasing health to the player */
 public class Player extends Entity
 {
     private Sound hurtSound;
@@ -68,7 +69,7 @@ public class Player extends Entity
         texture.loadFromFile(Paths.get("./data/sprites/player.png"));
         sprite.setTexture(texture);
         movementSpeed = 0.5f;
-        health = 200;
+        health = 100;
     }
 
     public void playHurt()
@@ -76,7 +77,7 @@ public class Player extends Entity
         hurtSound.play();
     }
 
-    /* Updates text with reload time for specific gun */
+    /** Updates text with reload time for specific gun */
     public void setReloadText()
     {
         switch (gunType)
@@ -96,7 +97,7 @@ public class Player extends Entity
         }
     }
 
-    /* Updates text with current chosen weapon */
+    /** Updates text with current chosen weapon */
     public void setGunText()
     {
         switch (gunType)
@@ -127,7 +128,9 @@ public class Player extends Entity
 
     public void update(float deltaTime, InputState inputState)
     {
-        if (dead) return;
+        if (health <= 0) {
+            return;
+        }
 
         if (inputState.isKeyPressed[Keyboard.Key.A.ordinal()])
             position = new Vector2f(position.x - deltaTime * movementSpeed, position.y);

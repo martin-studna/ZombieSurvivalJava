@@ -6,6 +6,7 @@ import org.jsfml.system.Vector2f;
 import org.jsfml.window.*;
 import org.jsfml.window.event.*;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import static main.com.studna.zombiesurvival.GameMode.*;
 
 
-/*
+/**
  * This class initialize and runs the game. Handles events from keyboard and mouse.
  * */
 public class Core
@@ -21,6 +22,7 @@ public class Core
     private GameMode mode = Game;
     private RenderWindow window;
 
+    /** Run method executes the game. */
     public void Run() throws IOException, ContextActivationException
     {
         float lastTime = 0f;
@@ -65,7 +67,10 @@ public class Core
                 case Game:
                     GameWorld.update(deltaTime, window);
                     GameWorld.draw(window);
-                    if (GameWorld.player.health <= 0) return;
+                    if (GameWorld.player.health <= 0) {
+                        JOptionPane.showMessageDialog(null, "Game Over!");
+                        return;
+                    }
                     break;
             }
 
@@ -75,7 +80,7 @@ public class Core
         }
     }
 
-    /*Initialize GameWorld and other key things like window and others */
+    /** Initialize GameWorld and other key things like window and others */
     private void Init() throws IOException, ContextActivationException
     {
         // Create window
@@ -105,7 +110,7 @@ public class Core
         GameWorld.enemies = new ArrayList<Enemy>();
     }
 
-    /* Event for gun switching */
+    /** Event for gun switching */
     private void OnMouseWheelEvent(MouseWheelEvent e)
     {
         GameWorld.player.gunType = (GameWorld.player.gunType + e.delta) % 3;
@@ -113,7 +118,7 @@ public class Core
         if (GameWorld.player.gunType < 0) GameWorld.player.gunType = 2;
     }
 
-    /* Close window */
+    /** Close window */
     private void OnKeyPressed(KeyEvent e)
     {
         if (Keyboard.isKeyPressed(Keyboard.Key.ESCAPE)) window.close();
@@ -123,7 +128,7 @@ public class Core
         if (keyCode < Keyboard.Key.values().length) GameWorld.inputState.isKeyPressed[keyCode] = true;
     }
 
-    /* Events from keyboard */
+    /** Events from keyboard */
     private void OnKeyReleased(KeyEvent e)
     {
         int keyCode = e.key.ordinal();
@@ -131,7 +136,7 @@ public class Core
         if (keyCode < Keyboard.Key.values().length) GameWorld.inputState.isKeyPressed[keyCode] = false;
     }
 
-    /* Mouse position */
+    /** Mouse position */
     private void OnMouseMoved(MouseEvent e)
     {
         GameWorld.inputState.mousePosition = new Vector2f(e.position.x, e.position.y);
@@ -139,7 +144,7 @@ public class Core
         GameWorld.inputState.mousePositionFromCenter = new Vector2f(GameWorld.inputState.mousePosition.x - window.getSize().x / 2, GameWorld.inputState.mousePosition.y - window.getSize().y / 2);
     }
 
-    /* Left mouse button pressed or released */
+    /** Left mouse button pressed or released */
     private void OnMouseButtonPressed(MouseButtonEvent e)
     {
         if (e.button == Mouse.Button.LEFT) GameWorld.inputState.isLMBPressed = true;

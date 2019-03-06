@@ -1,4 +1,4 @@
-<project name="HelloWorld" basedir="." default="main">
+<project name="ZombieSurvival" basedir="." default="main">
 
   <property name="src.dir"     value="src"/>
 
@@ -16,7 +16,6 @@
     <mkdir dir="${classes.dir}"/>
     <javac srcdir="${src.dir}" destdir="${classes.dir}"  classpathref="libpath"/>
   </target>
-
   <target name="jar" depends="compile">
     <mkdir dir="${jar.dir}"/>
     <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">

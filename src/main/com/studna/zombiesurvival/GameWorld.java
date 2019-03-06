@@ -7,11 +7,12 @@ import org.jsfml.graphics.*;
 import org.jsfml.system.Vector2f;
 import org.jsfml.window.Mouse;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/* Holds all the important states in the game: Player, enemies, bullets and etc */
+/** Holds all the important states in the game: Player, enemies, bullets and etc */
 public class GameWorld
 {
 
@@ -51,8 +52,8 @@ public class GameWorld
     public static Texture playerTexture;
     public static Texture backgroundTexture;
 
-    /* This method updates all states of the game
-     * @param deltatime
+    /** This method updates all states of the game
+     * @param deltaTime
      * @param window
      */
     public static void update(float deltaTime, RenderWindow window) throws IOException
@@ -225,7 +226,7 @@ public class GameWorld
         }
     }
 
-    /* This method draws all the objects to the specified window
+    /** This method draws all the objects to the specified window
      * @param window
      */
     public static void draw(RenderWindow window)
@@ -274,5 +275,4 @@ public class GameWorld
             bomb.Draw(window);
         }
     }
-
 }
